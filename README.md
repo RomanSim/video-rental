@@ -6,5 +6,5 @@ keep log of rented movies by spesific user,
 when user logged in his data saved in a session,
 the user name showed on page,
 the user must login,
-the data base attached to the repo.
+the data base attached to the repo need to be restored in order to use.
 
