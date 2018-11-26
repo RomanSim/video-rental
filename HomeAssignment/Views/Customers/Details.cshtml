@@ -1,0 +1,76 @@
+﻿@model HomeAssignment.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cust_Fname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cust_Fname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cust_Lname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cust_Lname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cust_DateReg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cust_DateReg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cust_username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cust_username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cust_password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cust_password)
+        </dd>
+
+    </dl>
+    <table class="table">
+        <tr>
+            <th>
+                Rented Movies
+            </th>
+           
+        </tr>
+
+        @foreach (var item in Model.Rentals)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DVD.Title)
+                </td>
+      
+            </tr>
+        }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

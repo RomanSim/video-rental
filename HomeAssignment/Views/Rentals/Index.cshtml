@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HomeAssignment.Models.Rental>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.Cust_Fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DVD.Title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.Cust_Fname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DVD.Title)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RentID })
+        </td>
+    </tr>
+}
+
+</table>
